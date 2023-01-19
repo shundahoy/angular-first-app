@@ -1,8 +1,13 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="first-slide" src="{{ product.cover }}" alt="First slide" />
-      <div class="container">
+      <img
+        *ngIf="product"
+        class="first-slide"
+        src="{{ product.cover }}"
+        alt="First slide"
+      />
+      <div class="container" *ngIf="product">
         <div class="carousel-caption text-left">
           <h1>{{ product.name }}</h1>
           <p>
@@ -23,7 +28,7 @@
   ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="container marketing">
+<div class="container marketing" *ngIf="product">
   <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="col-lg-4">
